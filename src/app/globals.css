@@ -1,0 +1,543 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "SuisseIntl";
+  src:
+    url("/fonts/SuisseIntl-Light.ttf") format("truetype"),
+    local("SuisseIntl-Light"),
+    local("Suisse Intl Light");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SuisseIntl";
+  src:
+    url("/fonts/SuisseIntl-Regular.ttf") format("truetype"),
+    local("SuisseIntl-Regular"),
+    local("Suisse Intl Regular");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SuisseIntl";
+  src:
+    url("/fonts/SuisseIntl-Medium.ttf") format("truetype"),
+    local("SuisseIntl-Medium"),
+    local("Suisse Intl Medium");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@theme {
+  --dust-grey: #dad7cd;
+  --dry-sage: #a3b18a;
+  --fern: #588157;
+  --hunter-green: #3a5a40;
+  --pine-teal: #344e41;
+
+  --color-background: #dad7cd;
+  --color-foreground: #344e41;
+
+  --color-base: #dad7cd;
+  --color-hero: #344e41;
+  --color-services: #dad7cd;
+  --color-why-safars: #cfd6c0;
+  --color-tech: #dad7cd;
+
+  --color-primary: #588157;
+  --color-lime: #588157;
+  --color-accent: #a3b18a;
+
+  --color-dark: #344e41;
+
+  --color-cyan: #588157;
+  --color-green: #588157;
+  --color-warning: #a3b18a;
+
+  --color-text-heading: #344e41;
+  --color-text-body: #2e4338;
+  --color-text-muted: #536456;
+  --color-text-on-dark-heading: #f7f4ee;
+  --color-text-on-dark-body: #ece6d9;
+  --color-text-on-dark-muted: #d5cebf;
+
+  --color-card: #eeede7;
+  --color-card-highlight: #cfd6c0;
+  --color-glass: rgba(238, 237, 231, 0.82);
+
+  --font-sans: "SuisseIntl", "Suisse Intl", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-serif: "SuisseIntl", "Suisse Intl", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+:root {
+  --background: #dad7cd;
+  --foreground: #343434;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #dad7cd;
+  color: #343434;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.62;
+  letter-spacing: -0.004em;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* User-requested global text color enforcement */
+body,
+body * {
+  color: #343434 !important;
+}
+
+body *::placeholder {
+  color: #343434 !important;
+  opacity: 1;
+}
+
+/* FAQ specific typography and contrast */
+#faq .faq-question {
+  color: #343434 !important;
+  font-weight: 400 !important;
+}
+
+#faq .faq-answer {
+  color: #666666 !important;
+  font-weight: 400 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-heading);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+}
+
+p {
+  color: var(--color-text-body);
+}
+
+p,
+li,
+label,
+input,
+select,
+textarea,
+button {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+small {
+  font-weight: 300;
+}
+
+strong,
+b {
+  font-weight: 500;
+}
+
+blockquote {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+/* Glass Panel - for primary content panels (Light) */
+@utility glass-panel {
+  background: rgba(238, 237, 231, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(52, 78, 65, 0.12);
+}
+
+/* Glass Card - for interactive cards (Light) */
+@utility glass-card {
+  background: #eeede7;
+  border: 1px solid rgba(52, 78, 65, 0.12);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(88, 129, 87, 0.6);
+    box-shadow: 0 8px 30px rgba(52, 78, 65, 0.08);
+  }
+}
+
+/* Text Glow - subtle on light backgrounds */
+@utility text-glow {
+  text-shadow: 0 0 40px rgba(163, 177, 138, 0.3);
+}
+
+/* Glass Morphism - for floating elements (Light) */
+@utility glass-morphism {
+  background: rgba(238, 237, 231, 0.78);
+  box-shadow: 0 4px 20px rgba(52, 78, 65, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(52, 78, 65, 0.12);
+}
+
+/* Glass Morphism Heavy - for prominent floating elements */
+@utility glass-morphism-heavy {
+  background: rgba(238, 237, 231, 0.92);
+  box-shadow: 0 8px 32px rgba(52, 78, 65, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(52, 78, 65, 0.14);
+}
+
+/* Aurora Animation */
+@utility animate-aurora {
+  animation: aurora 20s linear infinite;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 50% 50%, 50% 50%;
+  }
+
+  100% {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+/* ===== LINE HOVER LINK STYLES ===== */
+
+/* Base link styles */
+.link-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* --- SLIDE variant --- */
+.link-hover--slide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--slide:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --- DOUBLE variant --- */
+.link-hover--double::before,
+.link-hover--double::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.link-hover--double::before {
+  bottom: 4px;
+  transform-origin: right;
+  transition-delay: 0.1s;
+}
+
+.link-hover--double::after {
+  transform-origin: left;
+}
+
+.link-hover--double:hover::before,
+.link-hover--double:hover::after {
+  transform: scaleX(1);
+}
+
+.link-hover--double:hover::before {
+  transform-origin: left;
+}
+
+.link-hover--double:hover::after {
+  transform-origin: right;
+  transition-delay: 0.1s;
+}
+
+/* --- GROW variant --- */
+.link-hover--grow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transition: height 0.3s ease;
+}
+
+.link-hover--grow:hover::after {
+  height: 4px;
+}
+
+/* --- STRIKE variant --- */
+.link-hover--strike {
+  overflow: hidden;
+}
+
+.link-hover--strike span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--strike::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0) translateY(-50%);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--strike:hover span {
+  transform: scale(0.95);
+}
+
+.link-hover--strike:hover::after {
+  transform: scaleX(1) translateY(-50%);
+  transform-origin: left;
+}
+
+/* --- FADE variant --- */
+.link-hover--fade::before,
+.link-hover--fade::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.3s ease;
+}
+
+.link-hover--fade::before {
+  bottom: 4px;
+  transition-delay: 0.05s;
+}
+
+.link-hover--fade:hover::before,
+.link-hover--fade:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- PULSE variant --- */
+.link-hover--pulse::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+}
+
+.link-hover--pulse:hover::after {
+  animation: pulse-line 0.6s ease infinite;
+}
+
+@keyframes pulse-line {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* --- SWAP variant --- */
+.link-hover--swap::before,
+.link-hover--swap::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--swap::before {
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.link-hover--swap::after {
+  bottom: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.link-hover--swap:hover::before,
+.link-hover--swap:hover::after {
+  transform: translateX(0);
+}
+
+/* --- SWEEP variant --- */
+.link-hover--sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: currentColor;
+  opacity: 0.1;
+  transition: height 0.3s ease;
+}
+
+.link-hover--sweep:hover::after {
+  height: 100%;
+}
+
+/* --- BOUNCE variant --- */
+.link-hover--bounce span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.link-hover--bounce::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.link-hover--bounce:hover span {
+  transform: scaleX(1.05) scaleY(0.95);
+}
+
+.link-hover--bounce:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- SVG STROKE variants (arc, scribble) --- */
+.link-hover__graphic {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  pointer-events: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.link-hover__graphic--stroke path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.link-hover--arc:hover .link-hover__graphic--stroke path,
+.link-hover--scribble:hover .link-hover__graphic--stroke path {
+  stroke-dashoffset: 0;
+}
+
+.link-hover__graphic--arc {
+  bottom: -8px;
+}
+
+.link-hover__graphic--scribble {
+  bottom: -2px;
+}
+
+/* ===== LOGO SLIDER STYLES ===== */
+
+/* Container */
+.logo-slider__container {
+  --item-width: 160px;
+  --total-width: calc(var(--item-width) * var(--count));
+  --duration: calc(var(--speed) * 1s);
+}
+
+/* Track animation */
+.logo-slider__track {
+  animation: logo-slider-scroll var(--duration) linear infinite;
+}
+
+.logo-slider__container[data-direction="right"] .logo-slider__track {
+  animation-direction: reverse;
+}
+
+.logo-slider__container[data-pause-on-hover="true"]:hover .logo-slider__track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-slider-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * var(--total-width)));
+  }
+}
+
+/* Duplicate logos for seamless loop */
+.logo-slider__track::after {
+  content: "";
+  display: block;
+}
+
+/* Progressive blur effect */
+.logo-slider__blur>div {
+  --blur-step: calc(var(--blur-index) / var(--blurs));
+  --blur-amount: calc((1 - var(--blur-step)) * 8px * var(--blur));
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  mask: linear-gradient(to right,
+      transparent calc(var(--blur-step) * 100%),
+      black calc((var(--blur-step) + (1 / var(--blurs))) * 100%));
+  -webkit-mask: linear-gradient(to right,
+      transparent calc(var(--blur-step) * 100%),
+      black calc((var(--blur-step) + (1 / var(--blurs))) * 100%));
+}

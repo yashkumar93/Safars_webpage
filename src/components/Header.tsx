@@ -68,7 +68,7 @@ export const Header = () => {
             href="/"
             className={cn(
               "flex items-center gap-2 text-lg font-medium tracking-[-0.04em] transition-colors",
-              isScrolled ? "text-[var(--pine-teal)]" : "text-white"
+              isScrolled ? "text-[var(--pine-teal)]" : "text-[var(--pine-teal)]"
             )}
           >
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--dry-sage)]" />
@@ -91,7 +91,7 @@ export const Header = () => {
                       "inline-flex items-center gap-1.5 px-4 py-2 text-sm transition-colors cursor-pointer",
                       isScrolled
                         ? "text-[var(--hunter-green)]/80 hover:text-[var(--pine-teal)]"
-                        : "text-white/75 hover:text-white"
+                        : "text-[var(--hunter-green)]/70 hover:text-[var(--pine-teal)]"
                     )}
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   >
@@ -167,7 +167,7 @@ export const Header = () => {
                     "px-4 py-2 text-sm transition-colors",
                     isScrolled
                       ? "text-[var(--hunter-green)]/80 hover:text-[var(--pine-teal)]"
-                      : "text-white/75 hover:text-white"
+                      : "text-[var(--hunter-green)]/70 hover:text-[var(--pine-teal)]"
                   )}
                 >
                   {item.name}
@@ -182,7 +182,7 @@ export const Header = () => {
               Book a demo
             </Button>
             <Button
-              variant={isScrolled ? "ghost" : "secondary"}
+              variant="ghost"
               size="sm"
               className="hidden sm:inline-flex"
             >

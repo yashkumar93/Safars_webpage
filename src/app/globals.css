@@ -100,12 +100,18 @@ body {
 }
 
 /* User-requested global text color enforcement */
+/* Excludes footer which has its own dark background and light text */
 body,
-body * {
+body *:not(footer):not(footer *) {
   color: #343434 !important;
 }
 
-body *::placeholder {
+/* Footer gets its own color inheritance */
+footer, footer * {
+  color: inherit !important;
+}
+
+body *:not(footer *):not(footer)::placeholder {
   color: #343434 !important;
   opacity: 1;
 }

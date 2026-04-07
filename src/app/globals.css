@@ -1,0 +1,1268 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "SuisseIntl";
+  src:
+    url("/fonts/SuisseIntl-Light.ttf") format("truetype"),
+    local("SuisseIntl-Light"),
+    local("Suisse Intl Light");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SuisseIntl";
+  src:
+    url("/fonts/SuisseIntl-Regular.ttf") format("truetype"),
+    local("SuisseIntl-Regular"),
+    local("Suisse Intl Regular");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SuisseIntl";
+  src:
+    url("/fonts/SuisseIntl-Medium.ttf") format("truetype"),
+    local("SuisseIntl-Medium"),
+    local("Suisse Intl Medium");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@theme {
+  --dust-grey: #f8f8f8;
+  --dry-sage: #e1e1e1;
+  --fern: #b7b7b7;
+  --hunter-green: #666666;
+  --pine-teal: #1a1a1a;
+
+  --color-background: #f8f8f8;
+  --color-foreground: #1a1a1a;
+
+  --color-base: #f8f8f8;
+  --color-hero: #1a1a1a;
+  --color-services: #f6f6f6;
+  --color-why-safars: #efefef;
+  --color-tech: #f7f7f7;
+
+  --color-primary: #1a1a1a;
+  --color-lime: #555555;
+  --color-accent: #999999;
+
+  --color-dark: #1a1a1a;
+
+  --color-cyan: #555555;
+  --color-green: #555555;
+  --color-warning: #999999;
+
+  --color-text-heading: #1a1a1a;
+  --color-text-body: #444444;
+  --color-text-muted: #777777;
+  --color-text-on-dark-heading: #f8f8f8;
+  --color-text-on-dark-body: #eeeeee;
+  --color-text-on-dark-muted: #dcdcdc;
+
+  --color-card: #f1f1f1;
+  --color-card-highlight: #e4e4e4;
+  --color-glass: rgba(255, 255, 255, 0.82);
+
+  --font-sans: "SuisseIntl", "Suisse Intl", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-serif: "SuisseIntl", "Suisse Intl", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+:root {
+  --background: #f8f8f8;
+  --foreground: #1a1a1a;
+}
+
+html.dark {
+  --dust-grey: #0f1113;
+  --dry-sage: #171a1d;
+  --fern: #20252a;
+  --hunter-green: #9ea5ad;
+  --pine-teal: #f2f3f5;
+
+  --color-background: #0f1113;
+  --color-foreground: #f2f3f5;
+  --color-base: #0f1113;
+  --color-hero: #0f1113;
+  --color-services: #121518;
+  --color-why-safars: #111417;
+  --color-tech: #111417;
+
+  --color-text-heading: #f2f3f5;
+  --color-text-body: #c4cad0;
+  --color-text-muted: #9ea5ad;
+  --color-card: #171a1d;
+  --color-card-highlight: #20252a;
+  --color-glass: rgba(20, 23, 26, 0.82);
+
+  --background: #0f1113;
+  --foreground: #f2f3f5;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.62;
+  letter-spacing: -0.004em;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Override for dark-background elements: needs explicit color, not inherit */
+/* (inherit would just inherit the forced #343434 from the parent) */
+[data-light-text="true"],
+[data-light-text="true"] * {
+  color: var(--pine-teal) !important;
+}
+
+body *::placeholder {
+  color: #777777 !important;
+  opacity: 1;
+}
+
+html.dark body *::placeholder {
+  color: var(--color-text-muted) !important;
+}
+
+/* FAQ specific typography and contrast */
+#faq .faq-question {
+  color: #343434 !important;
+  font-weight: 400 !important;
+}
+
+#faq .faq-answer {
+  color: #666666 !important;
+  font-weight: 400 !important;
+}
+
+html.dark #faq .faq-question {
+  color: var(--color-text-heading) !important;
+}
+
+html.dark #faq .faq-answer {
+  color: var(--color-text-body) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-heading);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+}
+
+p {
+  color: var(--color-text-body);
+}
+
+p,
+li,
+label,
+input,
+select,
+textarea,
+button {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+small {
+  font-weight: 300;
+}
+
+strong,
+b {
+  font-weight: 500;
+}
+
+blockquote {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+/* Glass Panel - for primary content panels (Light) */
+@utility glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+/* Glass Card - for interactive cards (Light) */
+@utility glass-card {
+  background: #ffffff;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(26, 26, 26, 0.18);
+    box-shadow: 0 8px 30px rgba(26, 26, 26, 0.08);
+  }
+}
+
+/* Text Glow - subtle on light backgrounds */
+@utility text-glow {
+  text-shadow: 0 0 40px rgba(26, 26, 26, 0.14);
+}
+
+/* Glass Morphism - for floating elements (Light) */
+@utility glass-morphism {
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 4px 20px rgba(26, 26, 26, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+/* Glass Morphism Heavy - for prominent floating elements */
+@utility glass-morphism-heavy {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 32px rgba(26, 26, 26, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+/* Aurora Animation */
+@utility animate-aurora {
+  animation: aurora 20s linear infinite;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 50% 50%, 50% 50%;
+  }
+
+  100% {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+/* ===== LINE HOVER LINK STYLES ===== */
+
+/* Base link styles */
+.link-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* --- SLIDE variant --- */
+.link-hover--slide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--slide:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --- DOUBLE variant --- */
+.link-hover--double::before,
+.link-hover--double::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.link-hover--double::before {
+  bottom: 4px;
+  transform-origin: right;
+  transition-delay: 0.1s;
+}
+
+.link-hover--double::after {
+  transform-origin: left;
+}
+
+.link-hover--double:hover::before,
+.link-hover--double:hover::after {
+  transform: scaleX(1);
+}
+
+.link-hover--double:hover::before {
+  transform-origin: left;
+}
+
+.link-hover--double:hover::after {
+  transform-origin: right;
+  transition-delay: 0.1s;
+}
+
+/* --- GROW variant --- */
+.link-hover--grow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transition: height 0.3s ease;
+}
+
+.link-hover--grow:hover::after {
+  height: 4px;
+}
+
+/* --- STRIKE variant --- */
+.link-hover--strike {
+  overflow: hidden;
+}
+
+.link-hover--strike span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--strike::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0) translateY(-50%);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--strike:hover span {
+  transform: scale(0.95);
+}
+
+.link-hover--strike:hover::after {
+  transform: scaleX(1) translateY(-50%);
+  transform-origin: left;
+}
+
+/* --- FADE variant --- */
+.link-hover--fade::before,
+.link-hover--fade::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.3s ease;
+}
+
+.link-hover--fade::before {
+  bottom: 4px;
+  transition-delay: 0.05s;
+}
+
+.link-hover--fade:hover::before,
+.link-hover--fade:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- PULSE variant --- */
+.link-hover--pulse::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+}
+
+.link-hover--pulse:hover::after {
+  animation: pulse-line 0.6s ease infinite;
+}
+
+@keyframes pulse-line {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* --- SWAP variant --- */
+.link-hover--swap::before,
+.link-hover--swap::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.link-hover--swap::before {
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.link-hover--swap::after {
+  bottom: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.link-hover--swap:hover::before,
+.link-hover--swap:hover::after {
+  transform: translateX(0);
+}
+
+/* --- SWEEP variant --- */
+.link-hover--sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: currentColor;
+  opacity: 0.1;
+  transition: height 0.3s ease;
+}
+
+.link-hover--sweep:hover::after {
+  height: 100%;
+}
+
+/* --- BOUNCE variant --- */
+.link-hover--bounce span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.link-hover--bounce::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.link-hover--bounce:hover span {
+  transform: scaleX(1.05) scaleY(0.95);
+}
+
+.link-hover--bounce:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- SVG STROKE variants (arc, scribble) --- */
+.link-hover__graphic {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  pointer-events: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.link-hover__graphic--stroke path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.link-hover--arc:hover .link-hover__graphic--stroke path,
+.link-hover--scribble:hover .link-hover__graphic--stroke path {
+  stroke-dashoffset: 0;
+}
+
+.link-hover__graphic--arc {
+  bottom: -8px;
+}
+
+.link-hover__graphic--scribble {
+  bottom: -2px;
+}
+
+/* ===== LOGO SLIDER STYLES ===== */
+
+/* Container */
+.logo-slider__container {
+  --item-width: 160px;
+  --total-width: calc(var(--item-width) * var(--count));
+  --duration: calc(var(--speed) * 1s);
+}
+
+/* Track animation */
+.logo-slider__track {
+  animation: logo-slider-scroll var(--duration) linear infinite;
+}
+
+.logo-slider__container[data-direction="right"] .logo-slider__track {
+  animation-direction: reverse;
+}
+
+.logo-slider__container[data-pause-on-hover="true"]:hover .logo-slider__track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-slider-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * var(--total-width)));
+  }
+}
+
+/* Duplicate logos for seamless loop */
+.logo-slider__track::after {
+  content: "";
+  display: block;
+}
+
+/* Progressive blur effect */
+.logo-slider__blur>div {
+  --blur-step: calc(var(--blur-index) / var(--blurs));
+  --blur-amount: calc((1 - var(--blur-step)) * 8px * var(--blur));
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  mask: linear-gradient(to right,
+      transparent calc(var(--blur-step) * 100%),
+      black calc((var(--blur-step) + (1 / var(--blurs))) * 100%));
+  -webkit-mask: linear-gradient(to right,
+      transparent calc(var(--blur-step) * 100%),
+      black calc((var(--blur-step) + (1 / var(--blurs))) * 100%));
+}
+
+/* ===== APPLE NAVBAR STYLES ===== */
+/* Precisely tuned to match Apple.com's navbar aesthetic */
+
+/* Nav bar */
+.apple-nav {
+  font-family: var(--font-sans);
+}
+
+.apple-nav__bar {
+  position: relative;
+  z-index: 10;
+  /* Apple uses ~72% white with strong saturate blur — more translucent than opaque */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.apple-nav--dropdown-open .apple-nav__bar {
+  /* When dropdown is open, Apple makes the bar slightly more opaque & removes its bottom border */
+  background: rgba(251, 251, 253, 0.96);
+  border-bottom-color: transparent;
+}
+
+.apple-nav__container {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 22px;
+}
+
+/* Logo */
+.apple-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: #1d1d1f !important;
+  text-decoration: none;
+  transition: opacity 0.24s ease;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.apple-nav__logo:hover {
+  opacity: 0.75;
+}
+
+/* Logo dot — acts as a refined brand mark */
+.apple-nav__logo-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1d1d1f;
+  flex-shrink: 0;
+}
+
+/* Nav links (desktop) */
+.apple-nav__links {
+  display: none;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .apple-nav__links {
+    display: flex;
+  }
+}
+
+.apple-nav__link-wrapper {
+  position: relative;
+}
+
+/* Apple nav links: 12px, color #1d1d1f at ~80% opacity — very subtle */
+.apple-nav__link {
+  display: inline-block;
+  padding: 0 9px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 44px;
+  color: rgba(29, 29, 31, 0.8) !important;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.16s ease, opacity 0.16s ease;
+  white-space: nowrap;
+}
+
+/* When a dropdown is open, inactive links fade to ~55% */
+.apple-nav__links--menu-open .apple-nav__link {
+  opacity: 0.55;
+}
+
+.apple-nav__links--menu-open .apple-nav__link--active,
+.apple-nav__links--menu-open .apple-nav__link:hover {
+  opacity: 1;
+}
+
+.apple-nav__link:hover,
+.apple-nav__link--active {
+  color: #1d1d1f !important;
+}
+
+/* Right-side actions */
+.apple-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+/* Apple icon buttons are 44×44 tap targets with 15px icons */
+.apple-nav__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(29, 29, 31, 0.8) !important;
+  transition: color 0.16s ease, opacity 0.16s ease;
+  text-decoration: none;
+}
+
+.apple-nav__icon-btn:hover {
+  color: #1d1d1f !important;
+}
+
+.apple-nav__icon-btn--active {
+  color: #1d1d1f !important;
+}
+
+/* Hamburger — mobile only */
+.apple-nav__hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(29, 29, 31, 0.8) !important;
+  transition: color 0.16s ease;
+}
+
+@media (min-width: 768px) {
+  .apple-nav__hamburger {
+    display: none;
+  }
+}
+
+.apple-nav__hamburger:hover {
+  color: #1d1d1f !important;
+}
+
+/* ====== FULL-WIDTH DROPDOWN PANEL ====== */
+/* Apple dropdown is solid white (#fbfbfd) — no glass blur */
+.apple-nav__dropdown {
+  position: relative;
+  z-index: 5;
+  background: #fbfbfd;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  will-change: opacity;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+}
+
+.apple-nav__dropdown-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 36px 22px 48px;
+}
+
+.apple-nav__dropdown-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+.apple-nav__dropdown-col {
+  min-width: 0;
+}
+
+/* Apple dropdown section headings: very small, muted grey, Apple uses #6e6e73 */
+.apple-nav__dropdown-heading {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  color: #6e6e73 !important;
+  margin-bottom: 12px;
+  line-height: 1.33333 !important;
+}
+
+.apple-nav__dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.apple-nav__dropdown-list--large {
+  gap: 0;
+}
+
+/* Secondary links: small 12px muted, hover reveals full color */
+.apple-nav__dropdown-link {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #1d1d1f !important;
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.14s ease;
+  line-height: 1.5;
+  opacity: 0.78;
+}
+
+.apple-nav__dropdown-link:hover {
+  color: #1d1d1f !important;
+  opacity: 1;
+}
+
+/* Primary (large) links: bold 21px — Apple uses ~21px for its main items */
+.apple-nav__dropdown-link--large {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: #1d1d1f !important;
+  line-height: 1.19048;
+  padding: 6px 0;
+  opacity: 1;
+  transition: opacity 0.14s ease;
+}
+
+.apple-nav__dropdown-link--large:hover {
+  color: #1d1d1f !important;
+  opacity: 0.65;
+}
+
+/* ====== SEARCH PANEL ====== */
+.apple-nav__search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  margin-bottom: 20px;
+}
+
+.apple-nav__search-icon {
+  color: rgba(102, 102, 102, 0.55) !important;
+  flex-shrink: 0;
+}
+
+.apple-nav__search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a1a1a !important;
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+.apple-nav__search-input::placeholder {
+  color: rgba(102, 102, 102, 0.45) !important;
+}
+
+.apple-nav__search-suggestions-title {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 0.72) !important;
+  margin-bottom: 10px;
+}
+
+.apple-nav__search-suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.apple-nav__search-suggestion-item {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(29, 29, 31, 0.78) !important;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.14s ease, opacity 0.14s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apple-nav__search-suggestion-item::before {
+  content: "→";
+  font-size: 12px;
+  color: rgba(29, 29, 31, 0.32) !important;
+  transition: color 0.14s ease;
+}
+
+.apple-nav__search-suggestion-item:hover {
+  color: #1d1d1f !important;
+}
+
+.apple-nav__search-suggestion-item:hover::before {
+  color: rgba(29, 29, 31, 0.6) !important;
+}
+
+/* ====== BACKDROP SCRIM ====== */
+/* True glassmorphism: low opacity + heavy blur = content bleeds through as colour blobs */
+.apple-nav__scrim {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9996;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(60px);
+  -webkit-backdrop-filter: saturate(180%) blur(60px);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.8);
+}
+
+/* ====== MOBILE MENU ====== */
+.apple-nav__mobile {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9998;
+  background: rgba(248, 248, 248, 0.98);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .apple-nav__mobile {
+    display: none !important;
+  }
+}
+
+.apple-nav__mobile-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 28px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.apple-nav__mobile-section {
+  border-bottom: 0.5px solid rgba(26, 26, 26, 0.08);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.apple-nav__mobile-link {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #1a1a1a !important;
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 0.5px solid rgba(26, 26, 26, 0.08);
+  transition: color 0.2s ease;
+}
+
+.apple-nav__mobile-link:hover {
+  color: #444444 !important;
+}
+
+.apple-nav__mobile-link--heading {
+  border-bottom: none;
+  margin-bottom: 4px;
+}
+
+.apple-nav__mobile-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 2px;
+}
+
+.apple-nav__mobile-sublink {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(68, 68, 68, 0.75) !important;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.apple-nav__mobile-sublink:hover {
+  color: #1a1a1a !important;
+}
+
+.apple-nav__mobile-cta {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.apple-nav__mobile-cta-btn {
+  display: block;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 980px;
+  background: #1d1d1f;
+  color: #f5f5f7 !important;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.24s ease;
+}
+
+.apple-nav__mobile-cta-btn:hover {
+  background: #3a3a3c;
+}
+
+.apple-nav__mobile-theme-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  border-radius: 980px;
+  border: 1px solid rgba(26, 26, 26, 0.14);
+  background: transparent;
+  color: #1a1a1a;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.apple-nav__mobile-theme-btn:hover {
+  background: rgba(26, 26, 26, 0.05);
+}
+
+html.dark .apple-nav__bar {
+  background: rgba(22, 22, 23, 0.78);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .apple-nav--dropdown-open .apple-nav__bar {
+  background: rgba(28, 28, 30, 0.97);
+  border-bottom-color: transparent;
+}
+
+html.dark .apple-nav__logo {
+  color: #f5f5f7 !important;
+}
+
+html.dark .apple-nav__logo-dot {
+  background: #f5f5f7;
+}
+
+html.dark .apple-nav__link {
+  color: rgba(245, 245, 247, 0.8) !important;
+}
+
+html.dark .apple-nav__link:hover,
+html.dark .apple-nav__link--active {
+  color: #f5f5f7 !important;
+}
+
+html.dark .apple-nav__icon-btn,
+html.dark .apple-nav__hamburger {
+  color: rgba(245, 245, 247, 0.8) !important;
+}
+
+html.dark .apple-nav__icon-btn:hover,
+html.dark .apple-nav__hamburger:hover,
+html.dark .apple-nav__icon-btn--active {
+  color: #f5f5f7 !important;
+}
+
+html.dark .apple-nav__dropdown {
+  background: #1c1c1e;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .apple-nav__mobile {
+  background: rgba(22, 22, 23, 0.98);
+  backdrop-filter: saturate(170%) blur(24px);
+  -webkit-backdrop-filter: saturate(170%) blur(24px);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .apple-nav__dropdown-heading,
+html.dark .apple-nav__search-suggestions-title {
+  color: #98989d !important;
+}
+
+html.dark .apple-nav__dropdown-link,
+html.dark .apple-nav__search-suggestion-item,
+html.dark .apple-nav__mobile-sublink {
+  color: #ebebf0 !important;
+}
+
+html.dark .apple-nav__dropdown-link--large {
+  color: #f5f5f7 !important;
+}
+
+html.dark .apple-nav__dropdown-link--large:hover {
+  color: #f5f5f7 !important;
+  opacity: 0.6;
+}
+
+html.dark .apple-nav__dropdown-link:hover,
+html.dark .apple-nav__search-suggestion-item:hover {
+  color: #f5f5f7 !important;
+  opacity: 1;
+}
+
+html.dark .apple-nav__mobile-link,
+html.dark .apple-nav__mobile-link:hover {
+  color: #f5f5f7 !important;
+}
+
+html.dark .apple-nav__search-box,
+html.dark .apple-nav__mobile-link,
+html.dark .apple-nav__mobile-section {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark .apple-nav__search-input {
+  color: #f5f5f7 !important;
+}
+
+html.dark .apple-nav__search-input::placeholder {
+  color: #98989d !important;
+}
+
+html.dark .apple-nav__mobile-theme-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f5f5f7;
+}
+
+html.dark .apple-nav__mobile-theme-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ====== DARK MODE COMPATIBILITY LAYER ======
+   Ensures legacy hardcoded utility colors remain readable in dark mode. */
+html.dark [class*="text-[#1a1a1a]"],
+html.dark [class*="text-black"],
+html.dark [class*="!text-[#1a1a1a]"],
+html.dark [class*="!text-black"] {
+  color: var(--color-text-heading) !important;
+}
+
+html.dark [class*="text-[#333]"],
+html.dark [class*="text-[#444]"],
+html.dark [class*="text-[#555]"] {
+  color: var(--color-text-body) !important;
+}
+
+html.dark [class*="text-[#aaa]"],
+html.dark [class*="text-[#bbb]"] {
+  color: var(--color-text-muted) !important;
+}
+
+html.dark [class*="bg-white"],
+html.dark [class*="bg-[#f8f8f8]"],
+html.dark [class*="bg-[#f5f5f5]"],
+html.dark [class*="bg-[#f3f3f3]"],
+html.dark [class*="bg-[#f0f0f0]"] {
+  background-color: var(--color-card) !important;
+}
+
+html.dark [class*="border-black"],
+html.dark [class*="border-[#e0e0e0]"],
+html.dark [class*="border-[#e8e8e8]"] {
+  border-color: rgba(242, 243, 245, 0.22) !important;
+}
+
+html.dark [class*="focus:border-[#1a1a1a]"] {
+  border-color: rgba(242, 243, 245, 0.4) !important;
+}
+
+html.dark [class*="placeholder:text-[#bbb]"]::placeholder {
+  color: var(--color-text-muted) !important;
+}
+
+html.dark [class*="shadow-[0_24px_70px_rgba(26,26,26,0.08)]"],
+html.dark [class*="shadow-[0_24px_80px_rgba(26,26,26,0.08)]"],
+html.dark [class*="shadow-[0_32px_90px_rgba(26,26,26,0.08)]"] {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ====== DARK MODE VISUAL POLISH ====== */
+html.dark body {
+  background:
+    radial-gradient(circle at 20% -10%, rgba(74, 84, 96, 0.2), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(67, 77, 88, 0.15), transparent 35%),
+    var(--background);
+}
+
+html.dark [class*="bg-white/"],
+html.dark [class*="bg-white "] {
+  background-color: rgba(23, 26, 29, 0.84) !important;
+}
+
+html.dark [class*="border-[var(--pine-teal)]/10"],
+html.dark [class*="border-[var(--pine-teal)]/12"],
+html.dark [class*="border-[var(--pine-teal)]/14"],
+html.dark [class*="border-[var(--pine-teal)]/15"] {
+  border-color: rgba(242, 243, 245, 0.16) !important;
+}
+
+html.dark [class*="bg-[var(--dust-grey)]/60"],
+html.dark [class*="bg-[var(--dust-grey)]/50"] {
+  background-color: rgba(15, 17, 19, 0.72) !important;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: rgba(19, 22, 25, 0.92) !important;
+  color: var(--color-text-heading) !important;
+  border-color: rgba(242, 243, 245, 0.2) !important;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+  border-color: rgba(242, 243, 245, 0.38) !important;
+}
+
+html.dark select option {
+  background: #161a1e !important;
+  color: #f2f3f5 !important;
+}
+
+html.dark .apple-nav__scrim {
+  background: rgba(10, 10, 14, 0.55);
+  backdrop-filter: saturate(180%) blur(60px);
+  -webkit-backdrop-filter: saturate(180%) blur(60px);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+html.dark .footer-wordmark {
+  -webkit-text-stroke: 2px rgba(242, 243, 245, 0.12) !important;
+}
+
+html.dark footer [class*="bg-[rgba(26,26,26,0.1)]"] {
+  background: rgba(242, 243, 245, 0.15) !important;
+}
+
+/* ====== SVG ICONS IN NAVBAR ====== */
+.apple-nav svg,
+.apple-nav__mobile svg {
+  color: inherit !important;
+}

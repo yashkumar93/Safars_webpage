@@ -11,11 +11,11 @@ const differenceItems = [
     title: "Boost your in-house creative",
     description:
       "We handle the heavy lifting so you can focus on strategic, high impact work without adding overhead to the team.",
-    card: "bg-[#f0f0f0]",
+    card: "bg-[var(--color-card)]",
     labelClass: "text-[var(--pine-teal)]/85",
     textClass: "text-[var(--pine-teal)]",
     descClass: "text-[var(--pine-teal)]/92",
-    iconWrap: "bg-white/45",
+    iconWrap: "bg-[var(--color-card-highlight)]",
   },
   {
     icon: ListChecks,
@@ -23,11 +23,11 @@ const differenceItems = [
     title: "Say yes to more projects",
     description:
       "Whether you need more bandwidth or different skills, Safars has whatever resources you need to get the job done.",
-    card: "bg-[#e9e9e9]",
+    card: "bg-[var(--color-card)]",
     labelClass: "text-[var(--pine-teal)]/82",
     textClass: "text-[var(--pine-teal)]",
     descClass: "text-[var(--hunter-green)]/90",
-    iconWrap: "bg-white/45",
+    iconWrap: "bg-[var(--color-card-highlight)]",
   },
   {
     icon: Star,
@@ -35,11 +35,11 @@ const differenceItems = [
     title: "Don't sacrifice quality for speed",
     description:
       "Our global team of creatives delivers agency-level work in a fraction of the time.",
-    card: "bg-[#e2e2e2]",
+    card: "bg-[var(--color-card)]",
     labelClass: "text-[var(--pine-teal)]/82",
     textClass: "text-[var(--pine-teal)]",
     descClass: "text-[var(--hunter-green)]/90",
-    iconWrap: "bg-white/42",
+    iconWrap: "bg-[var(--color-card-highlight)]",
   },
 ];
 

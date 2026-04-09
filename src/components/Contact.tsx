@@ -33,7 +33,7 @@ export const Contact = () => {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="relative rounded-[1.8rem] border border-[var(--pine-teal)]/10 bg-[linear-gradient(155deg,#ffffff_0%,#f7f7f7_100%)] p-6 md:p-8"
+                        className="relative rounded-[1.8rem] border border-[var(--pine-teal)]/10 bg-[var(--color-card)] p-6 md:p-8"
                     >
                         <h2 className="mb-6 text-4xl font-semibold leading-[1.06] tracking-[-0.03em] text-[var(--pine-teal)] md:text-5xl lg:text-[3.7rem]">
                             The Future Is Automated:
@@ -47,17 +47,17 @@ export const Contact = () => {
                         </p>
 
                         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-white px-4 py-3.5">
+                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-[var(--color-card-highlight)] px-4 py-3.5">
                                 <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Response</p>
                                 <p className="mt-1 text-base font-semibold text-[var(--pine-teal)]">Within 24h</p>
                             </div>
-                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-white px-4 py-3.5">
+                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-[var(--color-card-highlight)] px-4 py-3.5">
                                 <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Discovery</p>
                                 <p className="mt-1 text-base font-semibold text-[var(--pine-teal)]">Free call</p>
                             </div>
                         </div>
 
-                        <div className="mt-4 rounded-xl border border-[var(--pine-teal)]/10 bg-white px-4 py-3.5">
+                        <div className="mt-4 rounded-xl border border-[var(--pine-teal)]/10 bg-[var(--color-card-highlight)] px-4 py-3.5">
                             <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Engagement</p>
                             <p className="mt-1 text-base font-semibold text-[var(--pine-teal)]">Senior team + dedicated PM</p>
                         </div>
@@ -68,7 +68,7 @@ export const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <form className="space-y-5 rounded-[1.5rem] border border-[var(--pine-teal)]/10 bg-white p-6 md:p-7">
+                        <form className="space-y-5 rounded-[1.5rem] border border-[var(--pine-teal)]/10 bg-[var(--color-card)] p-6 md:p-7">
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
                                     <label className="mb-2 block text-xs font-medium uppercase tracking-[0.15em] text-[var(--color-text-muted)]">
@@ -76,7 +76,7 @@ export const Contact = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        className="h-12 w-full rounded-lg border border-[var(--pine-teal)]/12 bg-white px-4 text-base text-[var(--pine-teal)] placeholder:text-[var(--color-text-muted)]/75 transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none"
+                                        className="h-12 w-full rounded-lg border border-[var(--pine-teal)]/12 bg-[var(--color-card-highlight)] px-4 text-base text-[var(--pine-teal)] placeholder:text-[var(--color-text-muted)]/75 transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none"
                                         placeholder="Enter your full name"
                                     />
                                 </div>
@@ -87,7 +87,7 @@ export const Contact = () => {
                                     </label>
                                     <input
                                         type="email"
-                                        className="h-12 w-full rounded-lg border border-[var(--pine-teal)]/12 bg-white px-4 text-base text-[var(--pine-teal)] placeholder:text-[var(--color-text-muted)]/75 transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none"
+                                        className="h-12 w-full rounded-lg border border-[var(--pine-teal)]/12 bg-[var(--color-card-highlight)] px-4 text-base text-[var(--pine-teal)] placeholder:text-[var(--color-text-muted)]/75 transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none"
                                         placeholder="Enter email address"
                                     />
                                 </div>
@@ -99,7 +99,7 @@ export const Contact = () => {
                                         SERVICE
                                     </label>
                                     <div className="relative">
-                                        <select className="h-12 w-full appearance-none cursor-pointer rounded-lg border border-[var(--pine-teal)]/12 bg-white px-4 pr-10 text-base text-[var(--pine-teal)] transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none">
+                                        <select className="h-12 w-full appearance-none cursor-pointer rounded-lg border border-[var(--pine-teal)]/12 bg-[var(--color-card-highlight)] px-4 pr-10 text-base text-[var(--pine-teal)] transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none">
                                             <option value="" className="bg-white text-[var(--hunter-green)]">Select a service</option>
                                             <option value="pentest" className="bg-white text-[var(--pine-teal)]">Penetration Testing</option>
                                             <option value="ai" className="bg-white text-[var(--pine-teal)]">AI Agents &amp; Solutions</option>
@@ -120,7 +120,7 @@ export const Contact = () => {
                                         BUDGET
                                     </label>
                                     <div className="relative">
-                                        <select className="h-12 w-full appearance-none cursor-pointer rounded-lg border border-[var(--pine-teal)]/12 bg-white px-4 pr-10 text-base text-[var(--pine-teal)] transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none">
+                                        <select className="h-12 w-full appearance-none cursor-pointer rounded-lg border border-[var(--pine-teal)]/12 bg-[var(--color-card-highlight)] px-4 pr-10 text-base text-[var(--pine-teal)] transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none">
                                             <option value="" className="bg-white text-[var(--hunter-green)]">Select budget range</option>
                                             <option value="5k" className="bg-white text-[var(--pine-teal)]">$5,000 - $10,000</option>
                                             <option value="10k" className="bg-white text-[var(--pine-teal)]">$10,000 - $25,000</option>
@@ -142,7 +142,7 @@ export const Contact = () => {
                                 </label>
                                 <textarea
                                     rows={5}
-                                    className="w-full resize-none rounded-lg border border-[var(--pine-teal)]/12 bg-white px-4 py-3.5 text-base text-[var(--pine-teal)] placeholder:text-[var(--color-text-muted)]/75 transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none"
+                                    className="w-full resize-none rounded-lg border border-[var(--pine-teal)]/12 bg-[var(--color-card-highlight)] px-4 py-3.5 text-base text-[var(--pine-teal)] placeholder:text-[var(--color-text-muted)]/75 transition-colors focus:border-[var(--pine-teal)]/35 focus:outline-none"
                                     placeholder="Describe your project"
                                 />
                             </div>
@@ -150,13 +150,13 @@ export const Contact = () => {
                             <div className="pt-2">
                                 <button
                                     type="submit"
-                                    className="group mt-2 flex w-full items-center justify-between rounded-xl border border-[var(--pine-teal)]/35 bg-[var(--color-card)] px-6 py-4 text-[var(--pine-teal)] opacity-100 transition-all hover:-translate-y-0.5 hover:bg-[var(--color-card-highlight)]"
+                                    className="group mt-2 flex w-full items-center justify-between rounded-xl border border-transparent bg-[var(--pine-teal)] px-6 py-4 text-[var(--dust-grey)] transition-all hover:-translate-y-0.5 hover:opacity-90"
                                 >
                                     <span className="text-base font-medium">Send message</span>
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-[var(--dust-grey)]/15 transition-colors group-hover:bg-[var(--dust-grey)]/30">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-[var(--dust-grey)]/20 transition-colors group-hover:bg-[var(--dust-grey)]/30">
                                         <ArrowUpRight
                                             size={16}
-                                            className="text-[var(--pine-teal)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                            className="text-[var(--dust-grey)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                                         />
                                     </div>
                                 </button>

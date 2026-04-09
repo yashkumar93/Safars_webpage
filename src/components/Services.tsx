@@ -52,25 +52,25 @@ const services = [
 
 const serviceTones = [
   {
-    card: "bg-[#f2f2f2] border-[var(--pine-teal)]/10",
+    card: "bg-[var(--color-card)] border-[var(--pine-teal)]/10",
     icon: "bg-[var(--pine-teal)]/6 text-[var(--pine-teal)]",
     body: "text-[var(--hunter-green)]/96",
     cta: "text-[var(--pine-teal)]",
   },
   {
-    card: "bg-[#f0f0f0] border-[var(--pine-teal)]/10",
+    card: "bg-[var(--color-card)] border-[var(--pine-teal)]/10",
     icon: "bg-[var(--pine-teal)]/8 text-[var(--pine-teal)]",
     body: "text-[var(--hunter-green)]/94",
     cta: "text-[var(--pine-teal)]",
   },
   {
-    card: "bg-[#eeeeee] border-[var(--pine-teal)]/10",
+    card: "bg-[var(--color-card)] border-[var(--pine-teal)]/10",
     icon: "bg-[var(--pine-teal)]/8 text-[var(--hunter-green)]",
     body: "text-[var(--hunter-green)]/92",
     cta: "text-[var(--hunter-green)]",
   },
   {
-    card: "bg-[#ececec] border-[var(--pine-teal)]/10",
+    card: "bg-[var(--color-card)] border-[var(--pine-teal)]/10",
     icon: "bg-[var(--pine-teal)]/10 text-[var(--pine-teal)]",
     body: "text-[var(--hunter-green)]/92",
     cta: "text-[var(--pine-teal)]",
@@ -133,7 +133,7 @@ export const Services = () => {
                   <div>
                     <div
                       className={`mb-6 flex h-14 w-14 items-center justify-center rounded-[1.25rem] ${service.featured
-                        ? "bg-white/60 text-[var(--pine-teal)]"
+                        ? "bg-[var(--color-card-highlight)] text-[var(--pine-teal)]"
                         : tone?.icon
                         }`}
                     >

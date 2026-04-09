@@ -115,7 +115,7 @@ export function Testimonials() {
                             >
                                 {/* Quote Text */}
                                 <blockquote className="mb-12">
-                                    <p className="max-w-4xl text-2xl font-semibold leading-[1.46] tracking-[-0.015em] text-[var(--pine-teal)] md:text-3xl lg:text-4xl">
+                                    <p className="max-w-4xl text-2xl font-semibold leading-[1.46] tracking-[-0.015em] text-[var(--color-text-on-dark-heading)] md:text-3xl lg:text-4xl">
                                         {current.quote}
                                     </p>
                                 </blockquote>
@@ -134,10 +134,10 @@ export function Testimonials() {
                                         </div>
                                     </div>
                                     <div>
-                                        <p className="text-[var(--pine-teal)] font-semibold text-lg mb-0.5">
+                                        <p className="text-[var(--color-text-on-dark-heading)] font-semibold text-lg mb-0.5">
                                             {current.name}
                                         </p>
-                                        <p className="text-[var(--color-text-muted)] text-xs tracking-[0.15em] uppercase font-medium">
+                                        <p className="text-[var(--color-text-on-dark-muted)] text-xs tracking-[0.15em] uppercase font-medium">
                                             {current.title}
                                         </p>
                                     </div>
@@ -176,7 +176,7 @@ export function Testimonials() {
                         <div className="flex items-center gap-2">
                             <button
                                 onClick={handlePrev}
-                                className="group w-12 h-12 flex items-center justify-center rounded-full border border-[var(--pine-teal)]/20 text-[var(--color-text-muted)] hover:border-[var(--pine-teal)]/35 hover:text-[var(--pine-teal)] transition-all duration-300"
+                                className="group w-12 h-12 flex items-center justify-center rounded-full border border-white/20 text-[var(--color-text-on-dark-muted)] hover:border-white/35 hover:text-[var(--color-text-on-dark-heading)] transition-all duration-300"
                                 aria-label="Previous testimonial"
                             >
                                 <svg
@@ -198,7 +198,7 @@ export function Testimonials() {
                             </button>
                             <button
                                 onClick={handleNext}
-                                className="group w-12 h-12 flex items-center justify-center rounded-full bg-[var(--dry-sage)] text-[var(--pine-teal)] hover:bg-[var(--dry-sage)]/90 hover:scale-105 transition-all duration-300"
+                                className="group w-12 h-12 flex items-center justify-center rounded-full bg-white/15 text-[var(--color-text-on-dark-heading)] hover:bg-white/25 hover:scale-105 transition-all duration-300"
                                 aria-label="Next testimonial"
                             >
                                 <svg

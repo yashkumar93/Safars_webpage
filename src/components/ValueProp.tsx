@@ -31,7 +31,7 @@ export const ValueProp = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-[2.25rem] border border-[var(--pine-teal)]/10 bg-white p-8 shadow-[0_24px_80px_rgba(26,26,26,0.08)] md:p-10 lg:p-12"
+            className="relative overflow-hidden rounded-[2.25rem] border border-[var(--pine-teal)]/10 bg-[var(--color-card)] p-8 shadow-[0_24px_80px_rgba(26,26,26,0.08)] md:p-10 lg:p-12"
           >
             <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-[var(--pine-teal)]/6 blur-3xl" />
 
@@ -57,13 +57,13 @@ export const ValueProp = () => {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <span className="rounded-full border border-[var(--pine-teal)]/15 bg-[#f5f5f5] px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--pine-teal)]">
+              <span className="rounded-full border border-[var(--pine-teal)]/15 bg-[var(--color-card-highlight)] px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--pine-teal)]">
                 AI Delivery
               </span>
-              <span className="rounded-full border border-[var(--pine-teal)]/15 bg-[#f5f5f5] px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--pine-teal)]">
+              <span className="rounded-full border border-[var(--pine-teal)]/15 bg-[var(--color-card-highlight)] px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--pine-teal)]">
                 Penetration Testing
               </span>
-              <span className="rounded-full border border-[var(--pine-teal)]/15 bg-[#f5f5f5] px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--pine-teal)]">
+              <span className="rounded-full border border-[var(--pine-teal)]/15 bg-[var(--color-card-highlight)] px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--pine-teal)]">
                 Cloud Security
               </span>
             </div>
@@ -80,7 +80,7 @@ export const ValueProp = () => {
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative overflow-hidden rounded-[2.25rem] border border-[var(--pine-teal)]/10 bg-[linear-gradient(145deg,#ffffff_0%,#f2f2f2_46%,#e8e8e8_100%)] p-8 shadow-[0_24px_80px_rgba(26,26,26,0.08)] md:p-10 lg:p-12"
+            className="relative overflow-hidden rounded-[2.25rem] border border-[var(--pine-teal)]/10 bg-[var(--color-card)] p-8 shadow-[0_24px_80px_rgba(26,26,26,0.08)] md:p-10 lg:p-12"
           >
             <div className="absolute -right-10 top-10 h-36 w-36 rounded-full bg-[var(--pine-teal)]/6 blur-3xl" />
             <div className="absolute -bottom-16 left-8 h-40 w-40 rounded-full bg-white/45 blur-3xl" />
@@ -89,16 +89,16 @@ export const ValueProp = () => {
               {logos.map((logo) => (
                 <div
                   key={logo.name}
-                  className="flex items-center gap-3 rounded-2xl border border-[var(--pine-teal)]/10 bg-white/75 px-4 py-3 text-sm font-medium text-[var(--pine-teal)]"
+                  className="flex items-center gap-3 rounded-2xl border border-[var(--pine-teal)]/10 bg-[var(--color-card-highlight)] px-4 py-3 text-sm font-medium text-[var(--color-text-heading)]"
                 >
-                  <span className="text-[var(--pine-teal)]">{logo.icon}</span>
+                  <span className="text-[var(--color-text-heading)]">{logo.icon}</span>
                   <span>{logo.name}</span>
                 </div>
               ))}
             </div>
 
             <div className="relative z-10 mt-16 max-w-xl">
-              <h3 className="text-4xl font-semibold tracking-[-0.05em] text-[var(--pine-teal)] md:text-5xl lg:text-6xl lg:leading-[0.98]">
+              <h3 className="text-4xl font-semibold tracking-[-0.05em] text-[var(--color-text-heading)] md:text-5xl lg:text-6xl lg:leading-[0.98]">
                 Trusted by teams building <br />
                 high-stakes systems
               </h3>

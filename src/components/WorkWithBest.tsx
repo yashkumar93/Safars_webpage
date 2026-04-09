@@ -36,19 +36,19 @@ export const WorkWithBest = () => {
                         </p>
 
                         <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-white/90 px-4 py-3">
+                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-[var(--color-card)] px-4 py-3">
                                 <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Execution</p>
                                 <p className="mt-1 text-sm font-semibold text-[var(--pine-teal)]">Senior-only delivery</p>
                             </div>
-                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-white/90 px-4 py-3">
+                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-[var(--color-card)] px-4 py-3">
                                 <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Ownership</p>
                                 <p className="mt-1 text-sm font-semibold text-[var(--pine-teal)]">Dedicated project lead</p>
                             </div>
-                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-white/90 px-4 py-3">
+                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-[var(--color-card)] px-4 py-3">
                                 <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Velocity</p>
                                 <p className="mt-1 text-sm font-semibold text-[var(--pine-teal)]">Kickoff in 48 hours</p>
                             </div>
-                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-white/90 px-4 py-3">
+                            <div className="rounded-xl border border-[var(--pine-teal)]/10 bg-[var(--color-card)] px-4 py-3">
                                 <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Coverage</p>
                                 <p className="mt-1 text-sm font-semibold text-[var(--pine-teal)]">Timezone-friendly collaboration</p>
                             </div>
@@ -68,7 +68,7 @@ export const WorkWithBest = () => {
                         transition={{ delay: 0.2 }}
                         className="relative"
                     >
-                        <div className="relative overflow-hidden rounded-[2rem] border border-[var(--pine-teal)]/12 bg-white p-8 shadow-[0_24px_70px_rgba(26,26,26,0.08)] md:p-9">
+                        <div className="relative overflow-hidden rounded-[2rem] border border-[var(--pine-teal)]/12 bg-[var(--color-card)] p-8 shadow-[0_24px_70px_rgba(26,26,26,0.08)] md:p-9">
                             <div className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-[var(--dust-grey)] blur-3xl" />
                             <div className="relative z-10">
                                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--pine-teal)]/70">

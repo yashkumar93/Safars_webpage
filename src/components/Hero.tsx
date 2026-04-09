@@ -85,20 +85,19 @@ export const Hero = () => {
                     >
                         <Link href="/#contact">
                             <button
-                                className="group inline-flex h-12 items-center gap-2 rounded-full border border-[var(--pine-teal)]/35 bg-[var(--color-card)] px-8 text-base font-semibold tracking-[-0.01em] text-[var(--pine-teal)] opacity-100 shadow-[0_18px_40px_rgba(26,26,26,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--color-card-highlight)] hover:shadow-[0_22px_50px_rgba(26,26,26,0.18)]"
+                                className="group inline-flex h-12 items-center gap-2 rounded-full border border-transparent bg-[var(--pine-teal)] px-8 text-base font-semibold tracking-[-0.01em] text-[var(--dust-grey)] shadow-[0_18px_40px_rgba(26,26,26,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[0_22px_50px_rgba(26,26,26,0.28)]"
                             >
                                 Book a Strategy Call
                                 <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </button>
                         </Link>
                         <Link href="/#services">
-                            <Button
-                                size="lg"
-                                variant="ghost"
-                                className="px-8 text-base"
+                            <button
+                                className="inline-flex h-12 items-center justify-center whitespace-nowrap rounded-full border border-[var(--pine-teal)]/40 px-8 text-base font-medium tracking-[-0.01em] backdrop-blur-sm transition-all duration-300 hover:border-[var(--pine-teal)]/55 hover:bg-[var(--pine-teal)]/8"
+                                style={{ color: 'var(--color-text-heading)' }}
                             >
                                 View Services
-                            </Button>
+                            </button>
                         </Link>
                     </motion.div>
 
@@ -118,7 +117,7 @@ export const Hero = () => {
                                 <p className="text-2xl font-semibold tracking-tight text-[var(--pine-teal)] md:text-3xl">
                                     {stat.value}
                                 </p>
-                                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[var(--hunter-green)]/55">
+                                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[var(--hunter-green)]/80">
                                     {stat.label}
                                 </p>
                             </div>

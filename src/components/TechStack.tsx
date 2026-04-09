@@ -65,7 +65,7 @@ export function TechStack() {
   return (
     <section className="bg-[var(--dust-grey)] py-12 md:py-20">
       <div className="container mx-auto px-6">
-        <div className="relative overflow-hidden rounded-[2.25rem] border border-[var(--pine-teal)]/12 bg-white p-8 shadow-[0_24px_80px_rgba(26,26,26,0.08)] md:p-12">
+        <div className="relative overflow-hidden rounded-[2.25rem] border border-[var(--pine-teal)]/12 bg-[var(--color-card)] p-8 shadow-[0_24px_80px_rgba(26,26,26,0.08)] md:p-12">
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,rgba(26,26,26,0.05),transparent_45%,rgba(26,26,26,0.03))]" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -105,8 +105,8 @@ export function TechStack() {
                   transition={{ duration: 0.25 }}
                   className="group"
                 >
-                  <div className="relative flex aspect-square flex-col justify-between rounded-[1.6rem] border border-[var(--pine-teal)]/10 bg-[#f5f5f5] p-5 shadow-[0_14px_40px_rgba(26,26,26,0.05)] transition-all duration-300 group-hover:border-[var(--pine-teal)]/30 group-hover:shadow-[0_20px_50px_rgba(26,26,26,0.08)]">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--hunter-green)]/65">
+                  <div className="relative flex aspect-square flex-col justify-between rounded-[1.6rem] border border-[var(--pine-teal)]/10 bg-[var(--color-card)] p-5 shadow-[0_14px_40px_rgba(26,26,26,0.05)] transition-all duration-300 group-hover:border-[var(--pine-teal)]/30 group-hover:shadow-[0_20px_50px_rgba(26,26,26,0.08)]">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
                       /{tech.id}
                     </span>
 

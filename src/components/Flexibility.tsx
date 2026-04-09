@@ -62,14 +62,14 @@ export const Flexibility = () => {
               viewport={{ once: true, amount: 0.2 }}
               whileHover={{ y: -6 }}
               transition={{ duration: 0.35, delay: index * 0.08 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-[var(--pine-teal)]/10 bg-white p-7 shadow-[0_24px_70px_rgba(26,26,26,0.08)]"
+              className="group relative overflow-hidden rounded-[2rem] border border-[var(--pine-teal)]/10 bg-[var(--color-card)] p-7 shadow-[0_24px_70px_rgba(26,26,26,0.08)]"
             >
               <div
-                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${card.accent} opacity-45`}
+                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${card.accent} opacity-45 dark:opacity-0`}
               />
 
               <div className="relative z-10">
-                <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--pine-teal)]/12 bg-[#f5f5f5] text-[var(--pine-teal)]">
+                <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--pine-teal)]/12 bg-[var(--color-card-highlight)] text-[var(--pine-teal)]">
                   <card.icon size={24} />
                 </div>
 
